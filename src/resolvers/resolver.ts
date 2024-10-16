@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
-import { db } from '../database/mysql';
 import { readExcel } from '../utils/excelReader';
+import {db} from '../database/mysql';
+
 
 interface User {
   id: number;
@@ -72,16 +73,24 @@ export const resolvers = {
       }
       throw new Error('Invalid credentials');
     },
-    getAsentamientosByCP: (_: any, { codigoPostal }: { codigoPostal: string }) => {
-
-      return excelData.filter((entry) => entry.d_codigo === codigoPostal);
+    getAsentamientosByCP: async (_: any, { codigoPostal }: { codigoPostal: string }) => { 
+      const query = "select * from codigospostal where d_codigo=? ";  
+      const result = await db.query(query,[parseInt(codigoPostal)])
+      
+      return result[0]
     },
-    getCodigoPostalByAsentamiento: (_: any, { asentamiento }: { asentamiento: string }) => {
+    getCodigoPostalByAsentamiento: async (_: any, { asentamiento }: { asentamiento: string }) => {
       const entry = excelData.find((entry) => entry.d_asenta === asentamiento);
-      return entry ? entry.d_codigo : null;
+      const query = "select d_codigo from codigospostal where d_asenta=?";
+      const result = await db.query(query,[asentamiento])
+      
+      console.log (result[0].toString())
+      return result
     },
-    getDetailsByAsentamiento: (_: any, { asentamiento }: { asentamiento: string }) => {
-      return excelData.find((entry) => entry.d_asenta === asentamiento);
+    getDetailsByAsentamiento: async (_: any, { asentamiento }: { asentamiento: string }) => {
+      const query = "select * from codigospostal where d_asenta=?";
+      const result = await db.query(query,[asentamiento])
+      return result
     }
   },
   Mutation: {
