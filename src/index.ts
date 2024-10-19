@@ -17,6 +17,7 @@ const PORT = parseInt(process.env.PORT || "4000");
         port: PORT,
       }
     });
+    console.clear();
     console.log(`Server ready at ${url}`);
   } catch (error) {
     console.error("Error al inciar el servidor: ", error)
