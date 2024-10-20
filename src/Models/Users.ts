@@ -3,10 +3,10 @@ import sequelize from "../Config/conexion_database";
 import IUser from "../interface/IUser";
 
 class UserModel extends Model<IUser> implements IUser {
-    public id!: string;
-    public username!: string;
-    public email!: string;
-    public password!: string;
+    id!: string;
+    username!: string;
+    email!: string;
+    password!: string;
 }
 
 const User = UserModel.init({

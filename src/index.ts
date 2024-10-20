@@ -3,11 +3,11 @@ import { startStandaloneServer } from "@apollo/server/standalone";
 import { typeDefs } from './schemas/schema';
 import { resolvers } from './resolvers/resolver';
 import dotenv from 'dotenv';
+// import  "./utils/insertData";
 
 dotenv.config();
 
 const server = new ApolloServer({ typeDefs, resolvers });
-
 const PORT = parseInt(process.env.PORT || "4000");
 
 (async () => {
@@ -24,5 +24,3 @@ const PORT = parseInt(process.env.PORT || "4000");
     
   }
 })();
-
-console.log("OK!")

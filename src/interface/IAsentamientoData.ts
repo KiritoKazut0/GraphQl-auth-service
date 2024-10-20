@@ -1,4 +1,4 @@
-export default interface AsentamientoData {
+export default interface IAsentamientoData {
   d_codigo: string;
   d_asenta: string;
   d_tipo_asenta: string; 
