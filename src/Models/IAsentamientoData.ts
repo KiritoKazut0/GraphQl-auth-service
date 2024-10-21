@@ -95,6 +95,6 @@ const initializeDatabase = async () => {
   }
 };
 
-
+initializeDatabase();
 
 export default Asentamiento;

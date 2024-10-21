@@ -1,3 +1,4 @@
+
 export const typeDefs = `
   type User {
     id: ID!
@@ -6,10 +7,21 @@ export const typeDefs = `
 
   type AuthResponse {
     data: User
-    token: String
-    message: String
+    token: String!
+    message: String!
   }
 
+  type Asentamientos {
+      d_asenta: String!
+      d_tipo_asenta: String! 
+      c_tipo_asenta: String!
+      id_asenta_cpcons: String!
+  }
+
+  type ResponseAsentamientos {
+    data: [Asentamientos]
+    message: String!
+  }
 
   type Asentamiento {
     d_codigo: String!
@@ -29,8 +41,8 @@ export const typeDefs = `
   }
 
   type Query {
-    getAsentamientosByCP(codigoPostal: String!): [Asentamiento]
-    getCodigoPostalByAsentamiento(asentamiento: String!): String
+    getAsentamientosByCP(codigoPostal: String!): ResponseAsentamientos
+    CodigoPostalByAsentamiento(asentamiento: String!): String
     getDetailsByAsentamiento(asentamiento: String!): Asentamiento
   }
 
