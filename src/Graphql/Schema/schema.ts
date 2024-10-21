@@ -1,5 +1,5 @@
-
-export const typeDefs = `
+import { buildSchema } from "graphql";
+export const typeDefs = buildSchema(`
   type User {
     id: ID!
     username: String!
@@ -56,4 +56,4 @@ export const typeDefs = `
     login(username: String!, password: String!, email: String!): AuthResponse
     register(username: String!, password: String!, email: String!): AuthResponse
   }
-`;
+`) ;

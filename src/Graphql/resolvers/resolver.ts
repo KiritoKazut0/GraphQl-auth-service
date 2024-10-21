@@ -38,7 +38,8 @@ export const resolvers = {
     },
 
     Query: {
-        async getAsentamientosByCP(_: void, { codigoPostal }: { codigoPostal: string }): Promise<IResponseAsentamientos> {
+        async getAsentamientosByCP(_: void, { codigoPostal }: { codigoPostal: string }):
+            Promise<IResponseAsentamientos> {
 
             if (!codigoPostal) {
                 return { data: null, message: "The zip code is required" }
