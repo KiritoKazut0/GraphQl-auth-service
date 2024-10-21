@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { typeDefs } from './schemas/schema';
+import { typeDefs } from './graphql-schema/schema';
 import { resolvers } from './resolvers/resolver';
 import dotenv from 'dotenv';
 // import  "./utils/insertData";

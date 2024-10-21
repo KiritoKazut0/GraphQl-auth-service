@@ -56,7 +56,7 @@ const Asentamiento = AsentamientoModel.init({
   },
   c_oficina: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   c_tipo_asenta: {
     type: DataTypes.STRING,
@@ -73,11 +73,11 @@ const Asentamiento = AsentamientoModel.init({
   },
   d_zona: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   c_cve_ciudad: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
 }, {
   sequelize,

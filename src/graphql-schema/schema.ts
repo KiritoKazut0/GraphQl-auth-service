@@ -17,33 +17,39 @@ export const typeDefs = `
       c_tipo_asenta: String!
       id_asenta_cpcons: String!
   }
+  
+  
 
   type ResponseAsentamientos {
     data: [Asentamientos]
     message: String!
   }
 
-  type Asentamiento {
-    d_codigo: String!
-    d_asenta: String!
-    d_tipo_asenta: String! 
-    D_mnpio: String!
-    d_estado: String!
-    d_ciudad: String!
-    d_CP: String!
-    c_estado: String!
-    c_oficina: String!
-    c_tipo_asenta: String!
-    c_mnpio: String!
-    id_asenta_cpcons: String!
-    d_zona: String!
-    c_cve_ciudad: String!
+  type ResponseCP {
+    cp: String!,
+    message: String!
   }
+
+  type detailsAsentamiento {
+     d_tipo_asenta: String!,
+     c_tipo_asenta: String!,
+     c_mnpio: String!,
+     D_mnpio: String!,
+     d_estado: String!,
+     c_estado: String!,
+     d_CP: String!
+  }
+
+  type IResponseDetailsAsentamiento {
+    data: detailsAsentamiento!,
+    message: String!
+  }
+
 
   type Query {
     getAsentamientosByCP(codigoPostal: String!): ResponseAsentamientos
-    CodigoPostalByAsentamiento(asentamiento: String!): String
-    getDetailsByAsentamiento(asentamiento: String!): Asentamiento
+    getCpByAsentamiento(d_asenta: String!): ResponseCP
+    getDetailsByAsentamiento(d_asenta: String!): IResponseDetailsAsentamiento
   }
 
   type Mutation {
