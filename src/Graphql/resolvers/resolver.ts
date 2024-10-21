@@ -8,7 +8,7 @@ import getAsentamientosByCP from '../../controllers/getAsentamientoByCP';
 import IResponseCP from '../interface/IResponseCP';
 import getCpByAsentamiento from '../../controllers/getCpByAsentamiento';
 import getDetailsAsentamiento from '../../controllers/getDetailsAsentamiento';
-import IResponseDetailsAsentamiento from '../interface/IResponseDetailsAsentamiento';
+import {IResponseDetailsAsentamiento} from '../interface/IResponseDetailsAsentamiento';
 
 export const resolvers = {
     Mutation: {

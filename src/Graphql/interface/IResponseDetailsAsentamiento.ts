@@ -1,5 +1,5 @@
 
-interface detailsAsentamiento {
+export interface detailsAsentamiento {
     d_tipo_asenta: string,
     c_tipo_asenta: string,
     c_mnpio: string,
@@ -9,7 +9,7 @@ interface detailsAsentamiento {
     d_CP: string
 }
 
-export default interface IResponseDetailsAsentamiento {
+export  interface IResponseDetailsAsentamiento {
     data: detailsAsentamiento | null,
     message: string
 }

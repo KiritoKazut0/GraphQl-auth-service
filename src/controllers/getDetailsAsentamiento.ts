@@ -1,11 +1,18 @@
-import IResponseDetailsAsentamiento from "../Graphql/interface/IResponseDetailsAsentamiento";
-import IAsentamientoData from "../Graphql/interface/IAsentamientoData";
+import {IResponseDetailsAsentamiento, detailsAsentamiento} from "../Graphql/interface/IResponseDetailsAsentamiento";
 import Asentamiento from "../Models/AsentamientoModel";
 
 const getDetailsAsentamiento = async(d_asenta: string): Promise<IResponseDetailsAsentamiento> => {
     try {
         
-        const result: IAsentamientoData | null = await Asentamiento.findOne({
+        const result: detailsAsentamiento | null = await Asentamiento.findOne({
+            attributes: [
+                "c_estado",
+                "c_mnpio",
+                " c_tipo_asenta",
+                "d_CP", "d_estado",
+                "D_mnpio",
+                "d_tipo_asenta"],
+                
             where: {
                 d_asenta
             }
@@ -14,15 +21,7 @@ const getDetailsAsentamiento = async(d_asenta: string): Promise<IResponseDetails
     if (!result) return {data: null, message: "No details found for the settlement provided"}    
     
     const response: IResponseDetailsAsentamiento = {
-        data: {
-            c_estado: result.c_estado,
-            c_mnpio: result.c_mnpio,
-            c_tipo_asenta: result.c_tipo_asenta,
-            d_CP: result.d_CP,
-            d_estado: result.d_estado,
-            D_mnpio: result.D_mnpio,
-            d_tipo_asenta: result.d_tipo_asenta
-        },
+        data: result,
         message: "Settlement details successfully obtained"
     }
 
