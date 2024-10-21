@@ -4,8 +4,6 @@ import dotenv from "dotenv"
 dotenv.config();
 
 
-
-
 export const encryptPassword = async (password: string): Promise<string> => {
     try {
         const Salts = parseInt(process.env['SALTS_RAUNDS'] || '5');

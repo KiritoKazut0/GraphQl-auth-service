@@ -1,6 +1,6 @@
-import User from "../Models/Users"
-import AuthRequest from "../interface/AuthRequest"
-import AuthResponse from "../interface/AuthResponse"
+import User from "../Models/UsersModel";
+import AuthRequest from "../Graphql/interface/AuthRequest";
+import AuthResponse from "../Graphql/interface/AuthResponse";
 import { encryptPassword } from "../utils/bcryptService"
 import { v4 as uuidv4 } from "uuid";
 import generateToken from "../utils/generateToken";

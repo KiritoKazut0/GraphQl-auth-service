@@ -1,13 +1,13 @@
 import AuthRequest from '../interface/AuthRequest';
 import AuthResponse from '../interface/AuthResponse';
-import validateRequiredFields from '../utils/VerifyFields';
-import { loggin } from '../Auth/Login';
-import { registerNewUser } from '../Auth/Register';
+import validateRequiredFields from '../../utils/VerifyFields';
+import { loggin } from '../../Auth/Login';
+import { registerNewUser } from '../../Auth/Register';
 import { IResponseAsentamientos } from '../interface/IResponseAsentamiento';
-import getAsentamientosByCP from '../controllers/getAsentamientoByCP';
+import getAsentamientosByCP from '../../controllers/getAsentamientoByCP';
 import IResponseCP from '../interface/IResponseCP';
-import getCpByAsentamiento from '../controllers/getCpByAsentamiento';
-import getDetailsAsentamiento from '../controllers/getDetailsAsentamiento';
+import getCpByAsentamiento from '../../controllers/getCpByAsentamiento';
+import getDetailsAsentamiento from '../../controllers/getDetailsAsentamiento';
 import IResponseDetailsAsentamiento from '../interface/IResponseDetailsAsentamiento';
 
 export const resolvers = {

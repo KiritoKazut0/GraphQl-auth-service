@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../Config/conexion_database";
-import IUser from "../interface/IUser";
+import IUser from "../Graphql/interface/IUser"
 
 class UserModel extends Model<IUser> implements IUser {
     id!: string;

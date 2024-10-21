@@ -1,9 +1,9 @@
-import AuthRequest from "../interface/AuthRequest";
-import AuthResponse from "../interface/AuthResponse";
-import User from "../Models/Users";
+import AuthRequest from "../Graphql/interface/AuthRequest";
+import AuthResponse from "../Graphql/interface/AuthResponse";
+import User from "../Models/UsersModel";
 import generateToken from "../utils/generateToken";
 import { comparePassword } from "../utils/bcryptService";
-import IUser from "../interface/IUser";
+import IUser from "../Graphql/interface/IUser";
 
 export const loggin = async (data: AuthRequest): Promise<AuthResponse> => {
 

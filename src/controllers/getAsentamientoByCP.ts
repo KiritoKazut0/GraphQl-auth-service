@@ -1,6 +1,6 @@
-import Asentamiento from "../Models/IAsentamientoData";
-import {Asentamientos, IResponseAsentamientos} from "../interface/IResponseAsentamiento";
-import IAsentamientoData from "../interface/IAsentamientoData";
+import Asentamiento from "../Models/AsentamientoModel";
+import { IResponseAsentamientos, Asentamientos } from "../Graphql/interface/IResponseAsentamiento";
+import IAsentamientoData from "../Graphql/interface/IAsentamientoData";
 
 
 const getAsentamientosByCP = async (codigoPostal: string): Promise<IResponseAsentamientos> => {

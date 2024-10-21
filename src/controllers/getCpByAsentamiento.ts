@@ -1,6 +1,6 @@
-import IAsentamientoData from "../interface/IAsentamientoData";
-import IResponseCP from "../interface/IResponseCP";
-import Asentamiento from "../Models/IAsentamientoData";
+import IAsentamientoData from "../Graphql/interface/IAsentamientoData";
+import IResponseCP from "../Graphql/interface/IResponseCP";
+import Asentamiento from "../Models/AsentamientoModel";
 
 const getCpByAsentamiento = async (d_asenta: string): Promise<IResponseCP> => {
     try {

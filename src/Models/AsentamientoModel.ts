@@ -1,6 +1,6 @@
 import { DataTypes, Model } from "sequelize";
 import sequelize from "../Config/conexion_database";
-import IAsentamientoData from "../interface/IAsentamientoData";
+import IAsentamientoData from "../Graphql/interface/IAsentamientoData";
 
 
 class AsentamientoModel extends Model<IAsentamientoData> implements IAsentamientoData {

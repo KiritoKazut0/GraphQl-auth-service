@@ -1,6 +1,6 @@
-import IResponseDetailsAsentamiento from "../interface/IResponseDetailsAsentamiento";
-import IAsentamientoData from "../interface/IAsentamientoData";
-import Asentamiento from "../Models/IAsentamientoData";
+import IResponseDetailsAsentamiento from "../Graphql/interface/IResponseDetailsAsentamiento";
+import IAsentamientoData from "../Graphql/interface/IAsentamientoData";
+import Asentamiento from "../Models/AsentamientoModel";
 
 const getDetailsAsentamiento = async(d_asenta: string): Promise<IResponseDetailsAsentamiento> => {
     try {
