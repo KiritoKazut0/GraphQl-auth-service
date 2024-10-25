@@ -26,7 +26,7 @@ export const typeDefs = buildSchema(`
   }
 
   type ResponseCP {
-    cp: String!,
+    cp: String,
     message: String!
   }
 
@@ -41,7 +41,7 @@ export const typeDefs = buildSchema(`
   }
 
   type IResponseDetailsAsentamiento {
-    data: detailsAsentamiento!,
+    data: detailsAsentamiento,
     message: String!
   }
 
